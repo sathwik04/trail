@@ -20,5 +20,6 @@ from django.contrib.auth.decorators import login_required
 urlpatterns = [
     path('', login_required(views.reports), name='reports'),
     path('export/all/', login_required(views.export_all), name='export_all'),
+    path('contactus/', (views.contactus), name='contactus'),
     # path('', views.reports, name='reports'),
 ]

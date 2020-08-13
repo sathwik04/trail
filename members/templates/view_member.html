@@ -171,6 +171,7 @@
               <tr>
                 <th scope="col">ID</th>
                 <th scope="col">Name</th>
+
                 <!-- <th scope="col">Photo</th> -->
                 <th scope="col">Registration Date</th>
                 <th scope="col">Registration Upto</th>
@@ -221,6 +222,7 @@
                 <tr>
                   <th scope="row">{{ forloop.counter }}</th>
                   <td><a href="/members/update/{{ member.member_id }}">{{ member.first_name }} {{ member.last_name }}</a></td>
+
                   <td>{{ member.registration_date }}</td>
                   <td>{{ member.registration_upto }}</td>
                   <td>{{ member.get_subscription_type_display }}</td>
@@ -245,7 +247,7 @@
               <tr>
                 <th scope="col">ID</th>
                 <th scope="col">Name</th>
-                <th scope="col">DOB</th>
+
                 <!-- <th scope="col">Photo</th> -->
                 <th scope="col">Registration Date</th>
                 <th scope="col">Registration Upto</th>
@@ -286,7 +288,6 @@
     $("#submit").click(function (event) {
       event.preventDefault();
       var search = $("#id_search").val();
-
       $.ajax({
         type: 'POST',
         url: '{% url "search_member" %}',

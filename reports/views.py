@@ -12,8 +12,8 @@ def export_all(user_obj):
     response = HttpResponse(content_type='text/csv')
     response['Content-Disposition'] = 'attachment; filename="users.csv"'
     writer = csv.writer(response)
-    writer.writerow(['First name', 'Last name', 'DOB', 'Mobile', 'Admission Date', 'Subscription Type', 'Batch'])
-    members = user_obj.values_list('first_name', 'last_name', 'dob', 'mobile_number', 'admitted_on', 'subscription_type', 'batch')
+    writer.writerow(['First name', 'Last name',  'Mobile', 'Admission Date', 'Subscription Type', 'Batch'])
+    members = user_obj.values_list('first_name', 'last_name',  'mobile_number', 'admitted_on', 'subscription_type', 'batch')
     for user in members:
         writer.writerow(user)
 
@@ -65,3 +65,6 @@ def reports(request):
     else:
         form = GenerateReportForm()
     return render(request, 'reports.html', {'form': form, 'subs_end_today_count': get_notification_count(),})
+def contactus(request):
+    pass
+    return render(request,'contact.html')

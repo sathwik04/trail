@@ -10,9 +10,7 @@ A simple gym member manager to keep a track of all payments and members
 - Faster load speeds (thanks to Django 2.0!)
 - Reports for keeping track of payments and admissions
 
-## Working
 
-![Working](results/Gym-Member-Manager.gif)
 
 ## How to use
 
